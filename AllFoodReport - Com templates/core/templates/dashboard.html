@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <p>{{ usuarios }}</p>
+    <p>{{ idempresa }}</p>
+    {% for e in empresa %}
+        <p>{{ e.nome_fantasia }}</p>
+        <p>{{ e.versaousada }}</p>
+    {% endfor %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Caixas Abertos</th>
+                <th>Recebido</th>
+                <th>A Receber</th>
+                <th>Valor a receber estimado</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in recebimento %}
+        <tr>
+            <td>{{ r.caixasabertos }}</td>
+            <td>{{ r.totalrecebido }}</td>
+            <td>{{ r.totalreceber }}</td>
+            <td>{{ totalestimado }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

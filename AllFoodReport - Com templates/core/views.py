@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import UsuariosFuncoesAdm, Usuario, Empresa, RecebimentoCaixa, Mesa
+from .models import UsuariosFuncoesAdm, Usuario, Empresa, RecebimentoCaixa, Mesa, Ocorrencia
 from django.contrib import messages
 
 
@@ -33,7 +33,7 @@ def submit_login(request):
                 'empresa': Empresa.objects.filter(id=idempresa),
                 'recebimento': RecebimentoCaixa.objects.filter(idempresa_fk__exact=idempresa),
                 'totalestimado': totalestimado,
-
+                'ocorrencias': Ocorrencia.objects.filter(idempresa_fk__exact=idempresa),
                 'mesa': Mesa.objects.filter(idempresa_fk__exact=idempresa),
             }
             return render(request, 'home/index.html', context)

@@ -49,7 +49,6 @@
 					<div class="card card-primary">
 						<div class="card-header">
 							<div class="card-title">Recebimento</div>
-							<div class="card-category">Informaçoes sobre as Receitas</div>
 						</div>
 						<div class="card-body pb-0">
 							<table class="table mt-3">
@@ -88,36 +87,35 @@
 				<div class="col-md-6">
 					<div class="card card-primary">
 						<div class="card-header">
-							<div class="card-title">Ocorrencias</div>
-							<div class="card-category">Informaçoes sobre as Ocorrencias</div>
+							<div class="card-title">Ocorrências </div>
 						</div>
 						<div class="card-body pb-0">
 							<table class="table mt-3">
 							<thead>
 								</thead>
 								<tbody>
-								{% for r in recebimento %}
+								{% for o in ocorrencias %}
 									<tr>
 										<td>1</td>
 										<td colspan="2">Cancelamentos</td>
 
-										<td>{{ r.caixasabertos }}</td>
+										<td>{{ o.totalcancelamento }}</td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td colspan="2">Sangria</td>
 
-										<td>{{ r.totalrecebido }}</td>
+										<td>{{ o.totalsangria }}</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td colspan="2">Descontos</td>
-										<td>{{ r.totalreceber }}</td>
+										<td>{{ o.totaldesconto }}</td>
 									</tr>
 									<tr>
 										<td>4</td>
 										<td colspan="2">Reforço</td>
-										<td>{{ totalestimado }}</td>
+										<td>{{ o.totalreforco }}</td>
 									</tr>
 								{% endfor %}
 								</tbody>
